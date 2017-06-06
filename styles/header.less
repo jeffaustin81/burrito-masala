@@ -1,0 +1,85 @@
+// Styles for header
+header {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ), url(../images/taco_hero_mobile.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding: 0 15px 50px 15px;
+  min-height: 100vh;
+  text-align: center;
+
+  color: @lightColor;
+  h1 {
+    font-size: 3.7em;
+    clear: both;
+  }
+  h3 {
+    font-size: .9em;
+  }
+  h3.description {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  ul.social {
+      li {
+        a {
+          color: @lightColor;
+        }
+      }
+  }
+  #triangle-topright {
+    display: none;
+  }
+}
+
+
+// Media queries
+@media (min-width: 321px) {
+  header h1 {
+    font-size: 4em;
+  }
+  header h3 {
+    font-size: 1.2em;
+  }
+  header p {
+    margin-bottom: 45px;
+  }
+}
+
+@media (min-width: 600px) {
+  header {
+    min-height: 50vh;
+  }
+}
+
+@media (min-width: 768px) {
+  h3.description {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.45)
+      ), url(../images/taco_hero.png);
+      min-height: 30vh;
+      background-position: 50% 50%;
+  }
+  header h1 {
+      font-size: 4.75em;
+  }
+  h3.description {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6em;
+  }
+}

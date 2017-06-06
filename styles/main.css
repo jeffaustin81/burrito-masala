@@ -1,0 +1,363 @@
+/*
+File Name: generic.css
+Date: 04/04/16
+Programmer: Jeff Austin
+*/
+/* GENERIC STYLESHEET */
+/*
+
+BOX-SIZING CHANGE (box-sizing property)
+
+The following CSS changes the default box-sizing of box elements from
+content-box to border-box.
+
+border-box automatically includes border *and* padding sizes into your
+box property widths. No more subtracting padding and border sizes from
+your box widths! Now you can use responsive grids without fear of
+making your columns too wide and causing that annoying left-right
+scroll bar at the bottom of the page.
+
+Remember: this does not take margins into account since margins are
+not technically part of the box. For those, you will still have to
+do some subtraction.
+
+*/
+* {
+  box-sizing: border-box;
+}
+/*
+
+TEXT RENDERING (text-rendering property)
+
+Some fonts are built to handle certain combinations of lettering through
+the use of something called ligatures. For instance, the letters "fi" in
+a serif font can look odd if the top curve of the f runs into the dot of
+the i next to it. A ligature styles them both beautifully. Your browser
+generally does this for you but not on font sizes smaller than 20pt. This
+text-rendering code changes that. This one is entirely optional and you
+can remove this first line if you're not comfortable with it.
+
+
+FONT SMOOTHING (font-smoothing property)
+
+At this point in time, the font smoothing your browser does by default
+is imperfect and makes the font too thick. Using font-smoothing in CSS is
+subtle on a standard display but impressive in a high-definition display.
+There are two additional declarations to cover usage in Webkit and
+Mozilla engine browsers.
+
+*/
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*
+
+USE IMAGES, EMBEDS AND OBJECTS FREELY WITHOUT WORRYING ABOUT SIZES AND
+BREAKING YOUR LAYOUTS (max-width property)
+
+The following ensures that images and embedded content you add can't be
+wider than the box element they are currently in. This is important for
+responsive design, as this allows you to use images without having to
+specify width and height attributes in the HTML.
+
+*/
+img,
+embed,
+object {
+  max-width: 100%;
+}
+/*
+
+DEFAULT BEHAVIOR OF SELECTED HYPERLINKS (outline property)
+
+No more ugly dotted outlines on your active links! This is not very
+noticeable until it's pointed out, but it makes for a cleaner user
+experience.
+
+*/
+a {
+  outline: none;
+}
+/*
+
+IDENTIFYING HYPERLINK URLs FOR NON-INTERACTIVE DEVICE MEDIA (FOR PRINT,
+content property)
+
+Printed versions of the web page will now add the URL right after the
+hyperlink, since you can't follow hyperlinks on printed pages. At least,
+not yet! The content property allows this.
+
+*/
+@media print {
+  a:after {
+    content: " [' attr(href) '] ";
+  }
+}
+body {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fcfcfc;
+  color: #2d4059;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Raleway', sans-serif;
+}
+ul {
+  list-style: none;
+  text-align: left;
+}
+ul li {
+  font-size: .9em;
+  margin-bottom: 10px;
+}
+main.container {
+  padding: 0;
+}
+ul.social {
+  float: right;
+}
+ul.social li {
+  display: inline-block;
+  padding-right: 7px;
+}
+ul.social li a {
+  color: #2d4059;
+  font-size: 1.5em;
+}
+h3.phone-number {
+  display: none;
+  margin: 0;
+  font-size: 1.75em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+a.call-button {
+  margin-top: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: #fcfcfc;
+  background-color: #ea5455;
+  padding: .9em 1.8em;
+  text-transform: uppercase;
+}
+p.call-heading {
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 2.7em;
+}
+@media (min-width: 321px) {
+  a.call-button {
+    padding: 1.2em 2.4em;
+  }
+}
+@media (min-width: 600px) {
+  h3.phone-number {
+    display: inline-block;
+    border-top: 5px solid #ea5455;
+    margin-top: 10px;
+  }
+  a.call-button {
+    display: none;
+  }
+  p.call-heading {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    font-size: 20px;
+  }
+  h3.phone-number {
+    font-size: 2.5em;
+  }
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../images/taco_hero_mobile.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding: 0 15px 50px 15px;
+  min-height: 100vh;
+  text-align: center;
+  color: #fcfcfc;
+}
+header h1 {
+  font-size: 3.7em;
+  clear: both;
+}
+header h3 {
+  font-size: .9em;
+}
+header h3.description {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+header ul.social li a {
+  color: #fcfcfc;
+}
+header #triangle-topright {
+  display: none;
+}
+@media (min-width: 321px) {
+  header h1 {
+    font-size: 4em;
+  }
+  header h3 {
+    font-size: 1.2em;
+  }
+  header p {
+    margin-bottom: 45px;
+  }
+}
+@media (min-width: 600px) {
+  header {
+    min-height: 50vh;
+  }
+}
+@media (min-width: 768px) {
+  h3.description {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 992px) {
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../images/taco_hero.png);
+    min-height: 30vh;
+    background-position: 50% 50%;
+  }
+  header h1 {
+    font-size: 4.75em;
+  }
+  h3.description {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6em;
+  }
+}
+main {
+  /* Set a size for our map container, the Google Map will take up 100% of this container */
+  /* Styles for svg icons */
+}
+main h2 {
+  text-align: center;
+  color: #f07b3f;
+  clear: both;
+  padding-top: 25px;
+  font-size: 1.5em;
+}
+main h3 {
+  font-size: 1.35em;
+}
+main section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+main section.menu div {
+  text-align: center;
+}
+main section.menu div.firstChoice {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/burrito_and_bowl.png);
+  background-size: cover;
+  color: #fcfcfc;
+  border-top: 5px solid #ffd460;
+  background-position: 50%;
+}
+main section.menu div.thirdChoice {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/rice-bg.jpg);
+  background-size: cover;
+  color: #fcfcfc;
+  border-top: 5px solid #ffd460;
+  background-position: 50%;
+}
+main section.menu div.secondChoice,
+main section.menu div.fourthChoice {
+  background: #2d4059;
+  color: #fcfcfc;
+  border-top: 5px solid #ffd460;
+  padding-bottom: 30px;
+}
+main section.hours {
+  text-align: center;
+  padding-bottom: 30px;
+}
+main #map {
+  width: 100%;
+  height: 500px;
+}
+main img#ham-icon,
+main img#soup-icon,
+main img#burrito-icon,
+main img#cabbage-icon {
+  color: white;
+}
+main img#burrito-icon {
+  width: 74%;
+}
+main img#soup-icon {
+  width: 60%;
+}
+main img#ham-icon {
+  width: 60%;
+}
+main img#cabbage-icon {
+  width: 55%;
+  padding-bottom: 20px;
+}
+@media (max-width: 991px) {
+  section.menu {
+    margin: 0;
+  }
+  section.menu div {
+    padding: 0;
+  }
+}
+@media (min-width: 992px) {
+  div.firstChoice {
+    min-height: 19.7em;
+  }
+  div.thirdChoice {
+    min-height: 21.215em;
+  }
+}
+@media (min-width: 1200px) {
+  div.firstChoice {
+    min-height: 21.055em;
+  }
+  div.thirdChoice {
+    min-height: 20em;
+  }
+}
+footer {
+  padding: 0 15px;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer ul.address {
+  width: 50%;
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+footer ul.address li {
+  font-size: .70em;
+}
